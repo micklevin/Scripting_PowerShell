@@ -18,12 +18,12 @@ param
  [String]$SmtpBodyTail  = ''
 )
 
-Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue
-
 # Run-time Parameters
 $CurrDate   = Get-Date
 $ReportFile = [environment]::getfolderpath('mydocuments') + '\AllMailboxSizes-' + $CurrDate.Year + '-' + $CurrDate.Month + '-' + $CurrDate.Day + '.csv'
 $Output     = @()
+
+Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue
 
 Write-Host -NoNewLine 'Loading list of databases...'
 $DBs    = Get-MailboxDatabase | Sort-Object Name
