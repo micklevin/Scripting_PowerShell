@@ -24,6 +24,8 @@ $CurrDate   = Get-Date
 $ReportFile = [environment]::getfolderpath('mydocuments') + '\AllMailboxWithoutWindowsEmailAddress-' + $CurrDate.Year + '-' + $CurrDate.Month + '-' + $CurrDate.Day + '.csv'
 $Output     = @()
 
+Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue
+
 Write-Host -NoNewLine 'Loading list of databases...'
 $DBs    = Get-MailboxDatabase | Sort-Object Name
 Write-Host ' Done'
