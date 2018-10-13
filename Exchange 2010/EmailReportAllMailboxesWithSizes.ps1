@@ -3,7 +3,7 @@
 # Written by:   Mick Levin
 # Published at: https://github.com/micklevin/Scripting_PowerShell
 #
-# Version:      1.0
+# Version:      1.0.1
 #
 # Configuration
 
@@ -76,7 +76,7 @@ foreach($DB in $DBs)
  Write-Host ' Done'
 }
 
-Write-Host -NoNewLine "Exporting mailboxes into: $ReportFile ..."
+Write-Host -NoNewLine "Exporting this report into file: $ReportFile ..."
 $Output | Export-Csv $ReportFile -Encoding UTF8 -NoTypeInformation
 Write-Host ' Done'
 
