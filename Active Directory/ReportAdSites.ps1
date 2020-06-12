@@ -27,15 +27,18 @@ catch
  exit 1
 }
 
+#-------------------
+# Run-time Parameters
+$CurrDate      = Get-Date
+$ReportFile    = [environment]::getfolderpath('mydocuments') + '\AdSites-' + `
+                 $CurrDate.Year + '-' + $CurrDate.Month + '-' + $CurrDate.Day + '-' + $CurrDate.Hour + '-' + $CurrDate.Minute + '-' + $CurrDate.Second + '.csv'
+
+#-------------------
 if ($Debug -eq 'Yes') { ' Reading Sites from the Active Directory forest ...' }
 $AdForest       = new-object System.DirectoryServices.ActiveDirectory.DirectoryContext("Forest", $ForestName)
 [array]$AdSites = [System.DirectoryServices.ActiveDirectory.Forest]::GetForest($AdForest).sites
 if ($Debug -eq 'Yes') { ' Done.' }
 
-# Run-time Parameters
-$CurrDate      = Get-Date
-$ReportFile    = [environment]::getfolderpath('mydocuments') + '\AdSites-' + `
-                 $CurrDate.Year + '-' + $CurrDate.Month + '-' + $CurrDate.Day + '-' + $CurrDate.Hour + '-' + $CurrDate.Minute + '-' + $CurrDate.Second + '.csv'
 if ($AdSites)
 {
  if ($Debug -eq 'Yes') { (' Exporting information into file: ' + $ReportFile + ' ...') }
