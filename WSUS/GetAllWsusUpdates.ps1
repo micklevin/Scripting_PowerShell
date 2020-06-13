@@ -26,7 +26,7 @@ Alternative text for the email's Subject.
 Alternative text for the email's body.
 
 .NOTES
-Name:    Get All WSUS Updates.ps1
+Name:    GetAllWsusUpdates.ps1
 Author:  Mick Levin
 Site:    https://github.com/micklevin/Scripting_PowerShell
 Version: 1.0
