@@ -31,7 +31,7 @@ Test run, this is a default.
 powershell.exe -ExecutionPolicy ByPass -Command "C:\bin\Scripts\SfB\MigrateUsersLyncToSfB.ps1" -CsvFile "C:\bin\Scripts\Test.csv" -NewPool "SFBCS01.domain.local" -WaitSecs 30 {-Test:False}
 
 .NOTES
-Name:    RemoveInactiveMembersFromGroups.ps1
+Name:    MigrateUsersLyncToSfB.ps1
 Author:  Mick Levin
 Site:    https://github.com/micklevin/Scripting_PowerShell
 Version: 1.0.1
